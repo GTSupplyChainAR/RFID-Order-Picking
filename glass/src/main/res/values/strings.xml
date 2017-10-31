@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Order Picking</string>
+    <string name="action_stop">Stop</string>
+    <string name="hello_world">TESTER</string>
+</resources>
