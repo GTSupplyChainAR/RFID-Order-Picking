@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.cs3605.orderpicking.bluetooth.GlassClientBluetoothInterface;
+import com.cs3605.orderpicking.createExperiment.CreateExperimentActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -60,10 +61,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.new_experiment_button:
-                // TODO: New alert dialog for predefined or to choose
+                // TODO: New alert dialog with list of created experiments
                 break;
             case R.id.experiments_button:
-                // TODO: Diaong to create, view history, predefined
+                // TODO: Diaong to create, view history
+                startActivity(CreateExperimentActivity.newIntent(this));
                 break;
 
             // TODO: REmove

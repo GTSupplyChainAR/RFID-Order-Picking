@@ -1,26 +1,22 @@
 package com.cs3605.orderpicking.data;
 
-/**
- * Created by ryan_brooks on 10/30/17.
- */
-
 public class Trial {
 
     private long id;
     private String rackId;
-    private byte r1Quantity;
-    private byte r2Quantity;
-    private byte r3Quantity;
-    private byte y1Quantity;
-    private byte y2Quantity;
-    private byte y3Quantity;
-    private byte g1Quantity;
-    private byte g2Quantity;
-    private byte g3Quantity;
-    private byte b1Quantity;
-    private byte b2Quantity;
-    private byte b3Quantity;
-    private byte cartPos;
+    private int r1Quantity;
+    private int r2Quantity;
+    private int r3Quantity;
+    private int y1Quantity;
+    private int y2Quantity;
+    private int y3Quantity;
+    private int g1Quantity;
+    private int g2Quantity;
+    private int g3Quantity;
+    private int b1Quantity;
+    private int b2Quantity;
+    private int b3Quantity;
+    private int cartPos;
 
     public Trial() {}
 
@@ -40,107 +36,107 @@ public class Trial {
         this.rackId = rackId;
     }
 
-    public byte getR1Quantity() {
+    public int getR1Quantity() {
         return r1Quantity;
     }
 
-    public void setR1Quantity(byte r1Quantity) {
+    public void setR1Quantity(int r1Quantity) {
         this.r1Quantity = r1Quantity;
     }
 
-    public byte getR2Quantity() {
+    public int getR2Quantity() {
         return r2Quantity;
     }
 
-    public void setR2Quantity(byte r2Quantity) {
+    public void setR2Quantity(int r2Quantity) {
         this.r2Quantity = r2Quantity;
     }
 
-    public byte getR3Quantity() {
+    public int getR3Quantity() {
         return r3Quantity;
     }
 
-    public void setR3Quantity(byte r3Quantity) {
+    public void setR3Quantity(int r3Quantity) {
         this.r3Quantity = r3Quantity;
     }
 
-    public byte getY1Quantity() {
+    public int getY1Quantity() {
         return y1Quantity;
     }
 
-    public void setY1Quantity(byte y1Quantity) {
+    public void setY1Quantity(int y1Quantity) {
         this.y1Quantity = y1Quantity;
     }
 
-    public byte getY2Quantity() {
+    public int getY2Quantity() {
         return y2Quantity;
     }
 
-    public void setY2Quantity(byte y2Quantity) {
+    public void setY2Quantity(int y2Quantity) {
         this.y2Quantity = y2Quantity;
     }
 
-    public byte getY3Quantity() {
+    public int getY3Quantity() {
         return y3Quantity;
     }
 
-    public void setY3Quantity(byte y3Quantity) {
+    public void setY3Quantity(int y3Quantity) {
         this.y3Quantity = y3Quantity;
     }
 
-    public byte getG1Quantity() {
+    public int getG1Quantity() {
         return g1Quantity;
     }
 
-    public void setG1Quantity(byte g1Quantity) {
+    public void setG1Quantity(int g1Quantity) {
         this.g1Quantity = g1Quantity;
     }
 
-    public byte getG2Quantity() {
+    public int getG2Quantity() {
         return g2Quantity;
     }
 
-    public void setG2Quantity(byte g2Quantity) {
+    public void setG2Quantity(int g2Quantity) {
         this.g2Quantity = g2Quantity;
     }
 
-    public byte getG3Quantity() {
+    public int getG3Quantity() {
         return g3Quantity;
     }
 
-    public void setG3Quantity(byte g3Quantity) {
+    public void setG3Quantity(int g3Quantity) {
         this.g3Quantity = g3Quantity;
     }
 
-    public byte getB1Quantity() {
+    public int getB1Quantity() {
         return b1Quantity;
     }
 
-    public void setB1Quantity(byte b1Quantity) {
+    public void setB1Quantity(int b1Quantity) {
         this.b1Quantity = b1Quantity;
     }
 
-    public byte getB2Quantity() {
+    public int getB2Quantity() {
         return b2Quantity;
     }
 
-    public void setB2Quantity(byte b2Quantity) {
+    public void setB2Quantity(int b2Quantity) {
         this.b2Quantity = b2Quantity;
     }
 
-    public byte getB3Quantity() {
+    public int getB3Quantity() {
         return b3Quantity;
     }
 
-    public void setB3Quantity(byte b3Quantity) {
+    public void setB3Quantity(int b3Quantity) {
         this.b3Quantity = b3Quantity;
     }
 
-    public byte getCartPos() {
+    public int getCartPos() {
         return cartPos;
     }
 
-    public void setCartPos(byte cartPos) {
+    public void setCartPos(int cartPos) {
         this.cartPos = cartPos;
     }
 }

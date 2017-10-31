@@ -20,6 +20,9 @@
             </intent-filter>
 
         </activity>
+
+        <activity android:name=".createExperiment.CreateExperimentActivity"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

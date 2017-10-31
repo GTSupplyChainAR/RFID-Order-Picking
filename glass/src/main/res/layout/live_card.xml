@@ -23,7 +23,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
             android:layout_weight="1"
-            android:background="@drawable/background_gray">
+            android:background="@drawable/background_gray_empty">
 
             <TextView
                 android:id="@+id/cart_bin_1_textview"
@@ -40,7 +40,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
             android:layout_weight="1"
-            android:background="@drawable/background_gray">
+            android:background="@drawable/background_gray_empty">
 
             <TextView
                 android:id="@+id/cart_bin_2_textview"
@@ -57,7 +57,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
             android:layout_weight="1"
-            android:background="@drawable/background_gray">
+            android:background="@drawable/background_gray_empty">
 
             <TextView
                 android:id="@+id/cart_bin_3_textview"
@@ -82,7 +82,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
             android:layout_weight="1"
-            android:background="@drawable/background_red">
+            android:background="@drawable/background_red_empty">
 
             <TextView
                 android:id="@+id/bin_11_textview"
@@ -99,7 +99,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
             android:layout_weight="1"
-            android:background="@drawable/background_red">
+            android:background="@drawable/background_red_empty">
 
             <TextView
                 android:id="@+id/bin_12_textview"
@@ -116,7 +116,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
             android:layout_weight="1"
-            android:background="@drawable/background_red">
+            android:background="@drawable/background_red_empty">
 
             <TextView
                 android:id="@+id/bin_13_textview"
@@ -141,7 +141,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
             android:layout_weight="1"
-            android:background="@drawable/background_yellow">
+            android:background="@drawable/background_yellow_empty">
 
             <TextView
                 android:id="@+id/bin_21_textview"
@@ -158,7 +158,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
             android:layout_weight="1"
-            android:background="@drawable/background_yellow">
+            android:background="@drawable/background_yellow_empty">
 
             <TextView
                 android:id="@+id/bin_22_textview"
@@ -175,7 +175,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
             android:layout_weight="1"
-            android:background="@drawable/background_yellow">
+            android:background="@drawable/background_yellow_empty">
 
             <TextView
                 android:id="@+id/bin_23_textview"
@@ -200,7 +200,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
             android:layout_weight="1"
-            android:background="@drawable/background_green">
+            android:background="@drawable/background_green_empty">
 
             <TextView
                 android:id="@+id/bin_31_textview"
@@ -217,7 +217,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
             android:layout_weight="1"
-            android:background="@drawable/background_green">
+            android:background="@drawable/background_green_empty">
 
             <TextView
                 android:id="@+id/bin_32_textview"
@@ -234,7 +234,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
             android:layout_weight="1"
-            android:background="@drawable/background_green">
+            android:background="@drawable/background_green_empty">
 
             <TextView
                 android:id="@+id/bin_33_textview"
@@ -259,7 +259,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
             android:layout_weight="1"
-            android:background="@drawable/background_blue">
+            android:background="@drawable/background_blue_empty">
 
             <TextView
                 android:id="@+id/bin_41_textview"
@@ -276,7 +276,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
             android:layout_weight="1"
-            android:background="@drawable/background_blue">
+            android:background="@drawable/background_blue_empty">
 
             <TextView
                 android:id="@+id/bin_42_textview"
@@ -293,7 +293,7 @@
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
             android:layout_weight="1"
-            android:background="@drawable/background_blue">
+            android:background="@drawable/background_blue_empty">
 
             <TextView
                 android:id="@+id/bin_43_textview"
