@@ -6,19 +6,27 @@
 
     <Button
         android:id="@+id/new_experiment_button"
-        android:layout_width="200dp"
+        android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
         android:text="New Experiment" />
 
     <Button
-        android:id="@+id/experiments_button"
-        android:layout_width="200dp"
+        android:id="@+id/create_experiment_button"
+        android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:text="Experiments" />
+        android:text="Create Experiment" />
+
+    <Button
+        android:id="@+id/view_saved_experiments_button"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="View Saved Experiments" />
 
     <EditText
         android:id="@+id/send_to_glass_et"

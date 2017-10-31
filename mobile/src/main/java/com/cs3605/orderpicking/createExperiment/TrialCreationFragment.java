@@ -9,10 +9,17 @@ import android.view.ViewGroup;
 
 import com.cs3605.orderpicking.R;
 import com.cs3605.orderpicking.data.Trial;
+import com.cs3605.orderpicking.util.TrialView;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class TrialCreationFragment extends Fragment {
 
     private Trial trial;
+
+    @BindView(R.id.create_trial_trialview)
+    TrialView trialView;
 
     public static TrialCreationFragment newInstance() {
         return new TrialCreationFragment();
@@ -28,13 +35,12 @@ public class TrialCreationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_trial_creation, container, false);
-
-        // TODO: Configure view
+        ButterKnife.bind(this, view);
 
         return view;
     }
 
     public Trial getTrial() {
-        return trial;
+        return trialView.getTrial();
     }
 }

@@ -3,11 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:id="@+id/create_experiment_name_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Experiment Name" />
+
+        <EditText
+            android:id="@+id/create_experiment_name_et"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
     <android.support.v4.view.ViewPager
         android:id="@+id/create_experiment_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/create_experiment_bottom_bar" />
+        android:layout_above="@+id/create_experiment_bottom_bar"
+        android:layout_below="@+id/create_experiment_name_bar" />
 
     <FrameLayout
         android:id="@+id/create_experiment_bottom_bar"

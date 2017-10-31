@@ -17,8 +17,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.new_experiment_button)
     Button newExpButton;
 
-    @BindView(R.id.experiments_button)
-    Button experimentsButton;
+    @BindView(R.id.create_experiment_button)
+    Button createExperimentsButton;
+
+    @BindView(R.id.view_saved_experiments_button)
+    Button viewSavedExperimentsButton;
 
     // TODO: Remove
     @BindView(R.id.send_to_glass_et)
@@ -48,7 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void setupViews() {
         newExpButton.setOnClickListener(this);
-        experimentsButton.setOnClickListener(this);
+        createExperimentsButton.setOnClickListener(this);
+        viewSavedExperimentsButton.setOnClickListener(this);
         sendToGlassButton.setOnClickListener(this);
     }
 
@@ -63,9 +67,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.new_experiment_button:
                 // TODO: New alert dialog with list of created experiments
                 break;
-            case R.id.experiments_button:
+            case R.id.create_experiment_button:
                 // TODO: Diaong to create, view history
                 startActivity(CreateExperimentActivity.newIntent(this));
+                break;
+            case R.id.view_saved_experiments_button:
+                // TODO: Launch activity to view/edit experiments
                 break;
 
             // TODO: REmove
