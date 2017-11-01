@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Order Picking</string>
+
+    <plurals name="trials_quantity">
+        <item quantity="one">%d trial</item>
+        <item quantity="other">%d trials</item>
+    </plurals>
 </resources>

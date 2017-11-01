@@ -132,6 +132,8 @@ public class CreateExperimentActivity extends AppCompatActivity implements View.
                     trialList.add(fragment.getTrial());
                 }
 
+                trialList = addTrialsToDb(trialList);
+
                 Experiment experiment = new Experiment();
                 experiment.setExperimentName(experimentNameET.getText().toString().trim());
                 experiment.setTrialList(trialList);
@@ -146,5 +148,17 @@ public class CreateExperimentActivity extends AppCompatActivity implements View.
                 }
                 break;
         }
+    }
+
+    private ArrayList<Trial> addTrialsToDb(ArrayList<Trial> trialList) {
+        ArrayList<Trial> updatedTrials = new ArrayList<>();
+        ExperimentDBHelper experimentDBHelper = new ExperimentDBHelper(this);
+        for (Trial trial : trialList) {
+            long id = experimentDBHelper.addTrial(trial);
+            trial.setId(id);
+            updatedTrials.add(trial);
+        }
+
+        return updatedTrials;
     }
 }

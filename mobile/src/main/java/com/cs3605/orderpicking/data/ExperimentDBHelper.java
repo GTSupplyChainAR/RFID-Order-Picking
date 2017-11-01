@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ExperimentDBHelper extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 0;
+    private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "order_picking";
 
     // Experiments
@@ -29,8 +29,8 @@ public class ExperimentDBHelper extends SQLiteOpenHelper {
     private static final String KEY_TRIAL_ID = "_id";
     private static final String KEY_TRIAL_RACK_ID = "rack_id";
     private static final String KEY_TRIAL_R1_QUANTITY = "r1_quantity";
-    private static final String KEY_TRIAL_R2_QUANTITY = "r1_quantity";
-    private static final String KEY_TRIAL_R3_QUANTITY = "r1_quantity";
+    private static final String KEY_TRIAL_R2_QUANTITY = "r2_quantity";
+    private static final String KEY_TRIAL_R3_QUANTITY = "r3_quantity";
     private static final String KEY_TRIAL_Y1_QUANTITY = "y1_quantity";
     private static final String KEY_TRIAL_Y2_QUANTITY = "y2_quantity";
     private static final String KEY_TRIAL_Y3_QUANTITY = "y3_quantity";
@@ -120,21 +120,21 @@ public class ExperimentDBHelper extends SQLiteOpenHelper {
         }
 
         Trial trial = new Trial();
-        trial.setId(Integer.parseInt(cursor.getString(0)));
-        trial.setRackId(cursor.getString(1));
-        trial.setR1Quantity(Byte.parseByte(cursor.getString(2)));
-        trial.setR2Quantity(Byte.parseByte(cursor.getString(3)));
-        trial.setR3Quantity(Byte.parseByte(cursor.getString(4)));
-        trial.setY1Quantity(Byte.parseByte(cursor.getString(5)));
-        trial.setY2Quantity(Byte.parseByte(cursor.getString(6)));
-        trial.setY3Quantity(Byte.parseByte(cursor.getString(7)));
-        trial.setG1Quantity(Byte.parseByte(cursor.getString(8)));
-        trial.setG2Quantity(Byte.parseByte(cursor.getString(9)));
-        trial.setG3Quantity(Byte.parseByte(cursor.getString(10)));
-        trial.setB1Quantity(Byte.parseByte(cursor.getString(11)));
-        trial.setB2Quantity(Byte.parseByte(cursor.getString(12)));
-        trial.setB3Quantity(Byte.parseByte(cursor.getString(13)));
-        trial.setCartPos(Byte.parseByte(cursor.getString(14)));
+        trial.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_ID))));
+        trial.setRackId(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_RACK_ID)));
+        trial.setR1Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_R1_QUANTITY))));
+        trial.setR2Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_R1_QUANTITY))));
+        trial.setR3Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_R1_QUANTITY))));
+        trial.setY1Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_Y1_QUANTITY))));
+        trial.setY2Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_Y2_QUANTITY))));
+        trial.setY3Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_Y3_QUANTITY))));
+        trial.setG1Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_G1_QUANTITY))));
+        trial.setG2Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_G2_QUANTITY))));
+        trial.setG3Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_G3_QUANTITY))));
+        trial.setB1Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_B1_QUANTITY))));
+        trial.setB2Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_B2_QUANTITY))));
+        trial.setB3Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_B3_QUANTITY))));
+        trial.setCartPos(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_CART_POS))));
         // return contact
         db.close();
         cursor.close();

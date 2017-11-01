@@ -21,8 +21,13 @@
 
         </activity>
 
-        <activity android:name=".createExperiment.CreateExperimentActivity"
-            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".createExperiment.CreateExperimentActivity"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".savedExperiments.SavedExperimentsActivity"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

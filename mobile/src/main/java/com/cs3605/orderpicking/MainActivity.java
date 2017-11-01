@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import com.cs3605.orderpicking.bluetooth.GlassClientBluetoothInterface;
 import com.cs3605.orderpicking.createExperiment.CreateExperimentActivity;
+import com.cs3605.orderpicking.savedExperiments.SavedExperimentsActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.view_saved_experiments_button:
                 // TODO: Launch activity to view/edit experiments
+                startActivity(SavedExperimentsActivity.newIntent(this));
                 break;
 
             // TODO: REmove
