@@ -123,8 +123,8 @@ public class ExperimentDBHelper extends SQLiteOpenHelper {
         trial.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_ID))));
         trial.setRackId(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_RACK_ID)));
         trial.setR1Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_R1_QUANTITY))));
-        trial.setR2Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_R1_QUANTITY))));
-        trial.setR3Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_R1_QUANTITY))));
+        trial.setR2Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_R2_QUANTITY))));
+        trial.setR3Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_R3_QUANTITY))));
         trial.setY1Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_Y1_QUANTITY))));
         trial.setY2Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_Y2_QUANTITY))));
         trial.setY3Quantity(Integer.parseInt(cursor.getString(cursor.getColumnIndex(KEY_TRIAL_Y3_QUANTITY))));

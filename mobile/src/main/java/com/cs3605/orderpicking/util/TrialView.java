@@ -235,98 +235,102 @@ public class TrialView extends RelativeLayout implements View.OnClickListener, V
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.rack_id_textview:
-                // TODO: Launch dialog to change name
-                break;
-            case R.id.bin_11:
-                trial.setR1Quantity(trial.getR1Quantity() + 1);
-                break;
-            case R.id.bin_12:
-                trial.setR2Quantity(trial.getR2Quantity() + 1);
-                break;
-            case R.id.bin_13:
-                trial.setR3Quantity(trial.getR3Quantity() + 1);
-                break;
-            case R.id.bin_21:
-                trial.setY1Quantity(trial.getY1Quantity() + 1);
-                break;
-            case R.id.bin_22:
-                trial.setY2Quantity(trial.getY2Quantity() + 1);
-                break;
-            case R.id.bin_23:
-                trial.setY3Quantity(trial.getY3Quantity() + 1);
-                break;
-            case R.id.bin_31:
-                trial.setG1Quantity(trial.getG1Quantity() + 1);
-                break;
-            case R.id.bin_32:
-                trial.setG2Quantity(trial.getG2Quantity() + 1);
-                break;
-            case R.id.bin_33:
-                trial.setG3Quantity(trial.getG3Quantity() + 1);
-                break;
-            case R.id.bin_41:
-                trial.setB1Quantity(trial.getB1Quantity() + 1);
-                break;
-            case R.id.bin_42:
-                trial.setB2Quantity(trial.getB2Quantity() + 1);
-                break;
-            case R.id.bin_43:
-                trial.setB3Quantity(trial.getB3Quantity() + 1);
-                break;
-            case R.id.cart_bin_1:
-                trial.setCartPos(0);
-                break;
-            case R.id.cart_bin_2:
-                trial.setCartPos(1);
-                break;
-            case R.id.cart_bin_3:
-                trial.setCartPos(2);
-                break;
+        if (isEnabled()) {
+            switch (v.getId()) {
+                case R.id.rack_id_textview:
+                    // TODO: Launch dialog to change name
+                    break;
+                case R.id.bin_11:
+                    trial.setR1Quantity(trial.getR1Quantity() + 1);
+                    break;
+                case R.id.bin_12:
+                    trial.setR2Quantity(trial.getR2Quantity() + 1);
+                    break;
+                case R.id.bin_13:
+                    trial.setR3Quantity(trial.getR3Quantity() + 1);
+                    break;
+                case R.id.bin_21:
+                    trial.setY1Quantity(trial.getY1Quantity() + 1);
+                    break;
+                case R.id.bin_22:
+                    trial.setY2Quantity(trial.getY2Quantity() + 1);
+                    break;
+                case R.id.bin_23:
+                    trial.setY3Quantity(trial.getY3Quantity() + 1);
+                    break;
+                case R.id.bin_31:
+                    trial.setG1Quantity(trial.getG1Quantity() + 1);
+                    break;
+                case R.id.bin_32:
+                    trial.setG2Quantity(trial.getG2Quantity() + 1);
+                    break;
+                case R.id.bin_33:
+                    trial.setG3Quantity(trial.getG3Quantity() + 1);
+                    break;
+                case R.id.bin_41:
+                    trial.setB1Quantity(trial.getB1Quantity() + 1);
+                    break;
+                case R.id.bin_42:
+                    trial.setB2Quantity(trial.getB2Quantity() + 1);
+                    break;
+                case R.id.bin_43:
+                    trial.setB3Quantity(trial.getB3Quantity() + 1);
+                    break;
+                case R.id.cart_bin_1:
+                    trial.setCartPos(0);
+                    break;
+                case R.id.cart_bin_2:
+                    trial.setCartPos(1);
+                    break;
+                case R.id.cart_bin_3:
+                    trial.setCartPos(2);
+                    break;
+            }
         }
         setupViews();
     }
 
     @Override
     public boolean onLongClick(View v) {
-        switch (v.getId()) {
-            case R.id.bin_11:
-                trial.setR1Quantity(0);
-                break;
-            case R.id.bin_12:
-                trial.setR2Quantity(0);
-                break;
-            case R.id.bin_13:
-                trial.setR3Quantity(0);
-                break;
-            case R.id.bin_21:
-                trial.setY1Quantity(0);
-                break;
-            case R.id.bin_22:
-                trial.setY2Quantity(0);
-                break;
-            case R.id.bin_23:
-                trial.setY3Quantity(0);
-                break;
-            case R.id.bin_31:
-                trial.setG1Quantity(0);
-                break;
-            case R.id.bin_32:
-                trial.setG2Quantity(0);
-                break;
-            case R.id.bin_33:
-                trial.setG3Quantity(0);
-                break;
-            case R.id.bin_41:
-                trial.setB1Quantity(0);
-                break;
-            case R.id.bin_42:
-                trial.setB2Quantity(0);
-                break;
-            case R.id.bin_43:
-                trial.setB3Quantity(0);
-                break;
+        if (isEnabled()) {
+            switch (v.getId()) {
+                case R.id.bin_11:
+                    trial.setR1Quantity(0);
+                    break;
+                case R.id.bin_12:
+                    trial.setR2Quantity(0);
+                    break;
+                case R.id.bin_13:
+                    trial.setR3Quantity(0);
+                    break;
+                case R.id.bin_21:
+                    trial.setY1Quantity(0);
+                    break;
+                case R.id.bin_22:
+                    trial.setY2Quantity(0);
+                    break;
+                case R.id.bin_23:
+                    trial.setY3Quantity(0);
+                    break;
+                case R.id.bin_31:
+                    trial.setG1Quantity(0);
+                    break;
+                case R.id.bin_32:
+                    trial.setG2Quantity(0);
+                    break;
+                case R.id.bin_33:
+                    trial.setG3Quantity(0);
+                    break;
+                case R.id.bin_41:
+                    trial.setB1Quantity(0);
+                    break;
+                case R.id.bin_42:
+                    trial.setB2Quantity(0);
+                    break;
+                case R.id.bin_43:
+                    trial.setB3Quantity(0);
+                    break;
+            }
         }
         setupViews();
         return true;

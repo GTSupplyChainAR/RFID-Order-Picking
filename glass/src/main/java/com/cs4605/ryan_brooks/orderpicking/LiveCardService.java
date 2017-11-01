@@ -29,7 +29,7 @@ public class LiveCardService extends Service {
         if (mLiveCard == null) {
             mLiveCard = new LiveCard(this, LIVE_CARD_TAG);
 
-            RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.live_card);
+            RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.trial_view);
 
             // TODO: Get
 

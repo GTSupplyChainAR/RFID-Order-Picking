@@ -4,11 +4,9 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.provider.SyncStateContract;
 import android.util.Log;
+
+import com.cs3605.orderpicking.data.Trial;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -80,13 +78,47 @@ public class GlassClientBluetoothInterface {
         connectedThread.write(string.getBytes());
     }
 
+    public void sendTrial(Trial trial) {
+        byte[] bytes = new byte[1024];
+        byte r1Quantity = (byte) (0xff & trial.getR1Quantity());
+        byte r2Quantity = (byte) (0xff & trial.getR2Quantity());
+        byte r3Quantity = (byte) (0xff & trial.getR3Quantity());
+        byte y1Quantity = (byte) (0xff & trial.getY1Quantity());
+        byte y2Quantity = (byte) (0xff & trial.getY2Quantity());
+        byte y3Quantity = (byte) (0xff & trial.getY3Quantity());
+        byte g1Quantity = (byte) (0xff & trial.getG1Quantity());
+        byte g2Quantity = (byte) (0xff & trial.getG2Quantity());
+        byte g3Quantity = (byte) (0xff & trial.getG3Quantity());
+        byte b1Quantity = (byte) (0xff & trial.getB1Quantity());
+        byte b2Quantity = (byte) (0xff & trial.getB2Quantity());
+        byte b3Quantity = (byte) (0xff & trial.getB3Quantity());
+        byte cartPos = (byte) (0xff & trial.getCartPos());
+
+        bytes[0] = r1Quantity;
+        bytes[1] = r2Quantity;
+        bytes[2] = r3Quantity;
+        bytes[3] = y1Quantity;
+        bytes[4] = y2Quantity;
+        bytes[5] = y3Quantity;
+        bytes[6] = g1Quantity;
+        bytes[7] = g2Quantity;
+        bytes[8] = g3Quantity;
+        bytes[9] = b1Quantity;
+        bytes[10] = b2Quantity;
+        bytes[11] = b3Quantity;
+        bytes[12] = cartPos;
+
+        connectedThread.write(bytes);
+    }
+
     private void connect(BluetoothSocket socket) {
         connectedThread = new ConnectedThread(socket);
         connectedThread.start();
     }
 
+    // TODO: Progressbar
     private class ConnectThread extends Thread {
-        private final BluetoothSocket clientSocket;
+        private BluetoothSocket clientSocket;
 
         ConnectThread() {
             BluetoothSocket socket = null;
@@ -108,10 +140,12 @@ public class GlassClientBluetoothInterface {
                 Log.d(TAG, "Client socket connected");
             } catch (IOException connectException) {
                 try {
-                    clientSocket.close();
+
+                    clientSocket = (BluetoothSocket) glassDevice.getClass().getMethod("createRfcommSocket", new Class[]{int.class}).invoke(glassDevice, 1);
+                    clientSocket.connect();
                     Log.e(TAG, "Client socket closed in run()", connectException);
-                } catch (IOException closeException) {
-                    Log.e(TAG, "Could not close the client socket", closeException);
+                } catch (Exception e) {
+                    Log.e(TAG, "Could not close the client socket", e);
                 }
             }
 
@@ -171,7 +205,9 @@ public class GlassClientBluetoothInterface {
 //                            MessageConstants.MESSAGE_READ, numBytes, -1, buffer);
 //                    readMsg.sendToTarget();
                 } catch (IOException e) {
+                    // TODO Handle this
                     Log.d(TAG, "Input stream was disconnected", e);
+                    cancel();
                     break;
                 }
             }

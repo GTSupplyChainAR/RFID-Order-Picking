@@ -1,6 +1,8 @@
 package com.cs3605.orderpicking.data;
 
-public class Trial {
+import java.io.Serializable;
+
+public class Trial implements Serializable {
 
     private long id;
     private String rackId;

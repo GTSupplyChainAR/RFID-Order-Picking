@@ -19,6 +19,7 @@
         android:layout_marginTop="25px">
 
         <LinearLayout
+            android:id="@+id/cart_bin_1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
@@ -36,6 +37,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/cart_bin_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
@@ -53,6 +55,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/cart_bin_3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
@@ -78,6 +81,7 @@
         android:layout_marginTop="5px">
 
         <LinearLayout
+            android:id="@+id/bin_11"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
@@ -91,10 +95,12 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="1"
+                android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/bin_12"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
@@ -108,10 +114,12 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="1"
+                android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/bin_13"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
@@ -125,6 +133,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="1"
+                android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
     </LinearLayout>
@@ -137,6 +146,7 @@
         android:layout_marginTop="5px">
 
         <LinearLayout
+            android:id="@+id/bin_21"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
@@ -150,10 +160,12 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="1"
+                android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/bin_22"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
@@ -167,10 +179,12 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="1"
+                android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/bin_23"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
@@ -184,6 +198,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="1"
+                android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
     </LinearLayout>
@@ -196,6 +211,7 @@
         android:layout_marginTop="5px">
 
         <LinearLayout
+            android:id="@+id/bin_31"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
@@ -209,10 +225,12 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="1"
+                android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/bin_32"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
@@ -226,10 +244,12 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="1"
+                android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/bin_33"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
@@ -243,6 +263,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="1"
+                android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
     </LinearLayout>
@@ -255,6 +276,7 @@
         android:layout_marginTop="5px">
 
         <LinearLayout
+            android:id="@+id/bin_41"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
@@ -268,10 +290,12 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="1"
+                android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/bin_42"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
@@ -285,10 +309,12 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="1"
+                android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/bin_43"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginRight="5px"
@@ -302,6 +328,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="1"
+                android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
     </LinearLayout>

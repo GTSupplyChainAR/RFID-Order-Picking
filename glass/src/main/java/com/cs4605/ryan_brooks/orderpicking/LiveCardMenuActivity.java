@@ -21,7 +21,7 @@ public class LiveCardMenuActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.live_card, menu);
+//        getMenuInflater().inflate(R.menu.trial_view, menu);
         return true;
     }
 

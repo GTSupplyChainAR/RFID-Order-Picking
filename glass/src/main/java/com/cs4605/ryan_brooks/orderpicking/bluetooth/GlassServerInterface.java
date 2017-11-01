@@ -9,6 +9,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
+import com.cs4605.ryan_brooks.orderpicking.util.BytesReceivedListener;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -33,12 +35,15 @@ public class GlassServerInterface {
     private BluetoothDevice pixelDevice;
     private Handler bluetoothHandler;
 
+    private BytesReceivedListener bytesReceivedListener;
+
     private AcceptThread acceptThread;
     private ConnectedThread connectedThread;
 
-    public GlassServerInterface(Handler handler) {
+    public GlassServerInterface(BytesReceivedListener bytesReceivedListener, Handler handler) {
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         bluetoothHandler = handler;
+        this.bytesReceivedListener = bytesReceivedListener;
 
         getPixelDevice();
     }
@@ -68,8 +73,8 @@ public class GlassServerInterface {
 
     public void acceptConnection() {
         // TODO
-        AcceptThread acceptThread = new AcceptThread();
-        acceptThread.run();
+        acceptThread = new AcceptThread();
+        acceptThread.start();
     }
 
     private void connect(BluetoothSocket socket) {
@@ -158,11 +163,18 @@ public class GlassServerInterface {
                     // Read from the InputStream.
                     numBytes = connectedInputStream.read(buffer);
                     // Send the obtained bytes to the UI activity.
-                    Message readMsg = bluetoothHandler.obtainMessage(
-                            MessageConstants.MESSAGE_READ, numBytes, -1, buffer);
-                    readMsg.sendToTarget();
+//                    Message readMsg = bluetoothHandler.obtainMessage(
+//                            MessageConstants.MESSAGE_READ, numBytes, -1, buffer);
+//                    readMsg.sendToTarget();
+
+                    bytesReceivedListener.onBytesRecieved(buffer);
                 } catch (IOException e) {
                     Log.d(TAG, "Input stream was disconnected", e);
+                    try {
+                        connectedInputStream.close();
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
                     break;
                 }
             }

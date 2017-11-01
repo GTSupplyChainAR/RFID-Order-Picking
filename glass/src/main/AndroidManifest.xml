@@ -64,6 +64,11 @@
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
 
+
+            <meta-data
+            android:name="com.google.android.glass.VoiceTrigger"
+            android:resource="@xml/voice_trigger" />
+
         </activity>
     </application>
 

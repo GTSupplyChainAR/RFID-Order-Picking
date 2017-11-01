@@ -28,6 +28,10 @@
         <activity
             android:name=".savedExperiments.SavedExperimentsActivity"
             android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".newExperiment.ExperimentActivity"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

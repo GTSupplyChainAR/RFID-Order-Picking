@@ -1,4 +1,4 @@
-package com.cs3605.orderpicking.createExperiment;
+package com.cs3605.orderpicking.newExperiment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,18 +14,29 @@ import com.cs3605.orderpicking.util.TrialView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class TrialCreationFragment extends Fragment {
+public class ExperimentTrialFragment extends Fragment {
+
+    private static final String ARG_TRIAL = "trial";
 
     @BindView(R.id.create_trial_trialview)
     TrialView trialView;
 
-    public static TrialCreationFragment newInstance() {
-        return new TrialCreationFragment();
+    private Trial trial;
+
+    public static ExperimentTrialFragment newInstance(Trial trial) {
+        Bundle args = new Bundle();
+        args.putSerializable(ARG_TRIAL, trial);
+
+        ExperimentTrialFragment fragment = new ExperimentTrialFragment();
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        trial = (Trial) getArguments().getSerializable(ARG_TRIAL);
     }
 
     @Nullable
@@ -34,10 +45,9 @@ public class TrialCreationFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_trial_creation, container, false);
         ButterKnife.bind(this, view);
 
-        return view;
-    }
+        trialView.setTrial(trial);
+        trialView.setEnabled(false);
 
-    public Trial getTrial() {
-        return trialView.getTrial();
+        return view;
     }
 }
