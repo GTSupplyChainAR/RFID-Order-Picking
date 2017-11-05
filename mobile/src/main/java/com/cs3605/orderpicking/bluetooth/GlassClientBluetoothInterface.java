@@ -65,11 +65,11 @@ public class GlassClientBluetoothInterface {
     }
 
     public void connectToGlass() {
-        connectThread = new ConnectThread();
         if (glassDevice == null) {
             return;
         }
 
+        connectThread = new ConnectThread();
         connectThread.run();
     }
 
@@ -237,6 +237,8 @@ public class GlassClientBluetoothInterface {
 
         public void cancel() {
             try {
+                connectedInputStream.close();
+                connectedOutputStream.close();
                 socket.close();
             } catch (IOException e) {
                 Log.e(TAG, "close() of client connect socket failed", e);

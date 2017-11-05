@@ -11,6 +11,8 @@ import android.util.Log;
 
 import com.cs4605.ryan_brooks.orderpicking.util.BytesReceivedListener;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -79,7 +81,7 @@ public class GlassServerInterface {
 
     private void connect(BluetoothSocket socket) {
         connectedThread = new ConnectedThread(socket);
-        connectedThread.start();
+        connectedThread.run();
     }
 
     private class AcceptThread extends Thread {
@@ -130,16 +132,16 @@ public class GlassServerInterface {
 
     private class ConnectedThread extends Thread {
         private final BluetoothSocket socket;
-        private final InputStream connectedInputStream;
+        private final DataInputStream connectedInputStream;
         private final OutputStream connectedOutputStream;
         private byte[] buffer; // mmBuffer store for the stream
 
         ConnectedThread(BluetoothSocket socket) {
             this.socket = socket;
-            InputStream inputStream = null;
+            DataInputStream inputStream = null;
             OutputStream outputStream = null;
             try {
-                inputStream = socket.getInputStream();
+                inputStream = new DataInputStream(socket.getInputStream());
             } catch (IOException e) {
                 Log.e(TAG, "Error occurred when creating client input stream", e);
             }
@@ -160,12 +162,7 @@ public class GlassServerInterface {
             // Keep listening to the InputStream until an exception occurs.
             while (true) {
                 try {
-                    // Read from the InputStream.
-                    numBytes = connectedInputStream.read(buffer);
-                    // Send the obtained bytes to the UI activity.
-//                    Message readMsg = bluetoothHandler.obtainMessage(
-//                            MessageConstants.MESSAGE_READ, numBytes, -1, buffer);
-//                    readMsg.sendToTarget();
+                    connectedInputStream.readFully(buffer);
 
                     bytesReceivedListener.onBytesRecieved(buffer);
                 } catch (IOException e) {
@@ -205,6 +202,8 @@ public class GlassServerInterface {
         // Call this method from the main activity to shut down the connection.
         public void cancel() {
             try {
+                connectedOutputStream.close();
+                connectedInputStream.close();
                 socket.close();
             } catch (IOException e) {
                 Log.e(TAG, "Could not close the server connect socket", e);
