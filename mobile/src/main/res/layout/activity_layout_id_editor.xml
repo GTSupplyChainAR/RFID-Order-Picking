@@ -1,21 +1,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:keepScreenOn="true"
-    android:padding="16dp">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/rack_id_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TEST"
-        android:textSize="18sp" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Bin ids:" />
 
     <LinearLayout
         android:id="@+id/rack_one_holder"
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_below="@+id/rack_id_textview"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="16dp">
 
         <LinearLayout
@@ -26,16 +28,12 @@
             android:layout_weight="1"
             android:background="@drawable/background_red_empty">
 
-            <TextView
-                android:id="@+id/bin_11_textview"
+            <EditText
+                android:id="@+id/bin_11_id_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_margin="8dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -47,16 +45,12 @@
             android:layout_weight="1"
             android:background="@drawable/background_red_empty">
 
-            <TextView
-                android:id="@+id/bin_12_textview"
+            <EditText
+                android:id="@+id/bin_12_id_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_margin="8dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -67,16 +61,12 @@
             android:layout_weight="1"
             android:background="@drawable/background_red_empty">
 
-            <TextView
-                android:id="@+id/bin_13_textview"
+            <EditText
+                android:id="@+id/bin_13_id_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_margin="8dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -85,6 +75,8 @@
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_below="@+id/rack_one_holder"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="8dp">
 
         <LinearLayout
@@ -95,16 +87,12 @@
             android:layout_weight="1"
             android:background="@drawable/background_yellow_empty">
 
-            <TextView
-                android:id="@+id/bin_21_textview"
+            <EditText
+                android:id="@+id/bin_21_id_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_margin="8dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -116,16 +104,12 @@
             android:layout_weight="1"
             android:background="@drawable/background_yellow_empty">
 
-            <TextView
-                android:id="@+id/bin_22_textview"
+            <EditText
+                android:id="@+id/bin_22_id_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_margin="8dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -136,16 +120,12 @@
             android:layout_weight="1"
             android:background="@drawable/background_yellow_empty">
 
-            <TextView
-                android:id="@+id/bin_23_textview"
+            <EditText
+                android:id="@+id/bin_23_id_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_margin="8dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -154,6 +134,8 @@
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_below="@+id/rack_two_holder"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="8dp">
 
         <LinearLayout
@@ -164,16 +146,12 @@
             android:layout_weight="1"
             android:background="@drawable/background_green_empty">
 
-            <TextView
-                android:id="@+id/bin_31_textview"
+            <EditText
+                android:id="@+id/bin_31_id_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_margin="8dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -185,16 +163,12 @@
             android:layout_weight="1"
             android:background="@drawable/background_green_empty">
 
-            <TextView
-                android:id="@+id/bin_32_textview"
+            <EditText
+                android:id="@+id/bin_32_id_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_margin="8dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -205,16 +179,12 @@
             android:layout_weight="1"
             android:background="@drawable/background_green_empty">
 
-            <TextView
-                android:id="@+id/bin_33_textview"
+            <EditText
+                android:id="@+id/bin_33_id_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_margin="8dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -223,6 +193,8 @@
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_below="@+id/rack_three_holder"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="8dp">
 
         <LinearLayout
@@ -233,16 +205,12 @@
             android:layout_weight="1"
             android:background="@drawable/background_blue_empty">
 
-            <TextView
-                android:id="@+id/bin_41_textview"
+            <EditText
+                android:id="@+id/bin_41_id_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_margin="8dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -254,16 +222,12 @@
             android:layout_weight="1"
             android:background="@drawable/background_blue_empty">
 
-            <TextView
-                android:id="@+id/bin_42_textview"
+            <EditText
+                android:id="@+id/bin_42_id_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_margin="8dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -274,16 +238,12 @@
             android:layout_weight="1"
             android:background="@drawable/background_blue_empty">
 
-            <TextView
-                android:id="@+id/bin_43_textview"
+            <EditText
+                android:id="@+id/bin_43_id_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_margin="8dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -292,14 +252,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rack_four_holder"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:text="Cart position" />
+        android:text="Cart ids:" />
 
     <LinearLayout
         android:id="@+id/cart_rack_holder"
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_below="@+id/cart_pos_textview"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="8dp">
 
         <LinearLayout
@@ -311,15 +274,12 @@
             android:background="@drawable/background_gray_empty"
             android:orientation="horizontal">
 
-            <TextView
+            <EditText
+                android:id="@+id/cart_1_id_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_margin="8dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -332,15 +292,12 @@
             android:background="@drawable/background_gray_empty"
             android:orientation="horizontal">
 
-            <TextView
+            <EditText
+                android:id="@+id/cart_2_id_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="2"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_margin="8dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -352,17 +309,32 @@
             android:background="@drawable/background_gray_empty"
             android:orientation="horizontal">
 
-
-            <TextView
+            <EditText
+                android:id="@+id/cart_3_id_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="3"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:layout_margin="8dp" />
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bin_id_save_button"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="SAVE"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

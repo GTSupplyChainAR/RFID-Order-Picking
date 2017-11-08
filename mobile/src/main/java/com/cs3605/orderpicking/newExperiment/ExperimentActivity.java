@@ -8,9 +8,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cs3605.orderpicking.R;
 import com.cs3605.orderpicking.bluetooth.GlassClientBluetoothInterface;
+import com.cs3605.orderpicking.bluetooth.XbandInterface;
 import com.cs3605.orderpicking.data.Experiment;
 import com.cs3605.orderpicking.data.ExperimentDBHelper;
 import com.cs3605.orderpicking.data.Trial;
@@ -20,8 +22,10 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.ubimax.xbandtest.xband.XBandEventListener;
+import de.ubimax.xbandtest.xband.XBandIMUData;
 
-public class ExperimentActivity extends AppCompatActivity implements View.OnClickListener {
+public class ExperimentActivity extends AppCompatActivity implements View.OnClickListener, XBandEventListener, OnTrialUpdatedListener {
 
     /**
      * Cap this at 6 for memory concerns
@@ -46,7 +50,8 @@ public class ExperimentActivity extends AppCompatActivity implements View.OnClic
     private static final String ARG_EXPERIMENT_ID = "experiment_id";
 
     private Experiment experiment;
-    private GlassClientBluetoothInterface bluetoothInterface;
+    private GlassClientBluetoothInterface glassInterface;
+    private XbandInterface xbandInterface;
 
     public static Intent getIntent(Context context, int experimentId) {
         Bundle args = new Bundle();
@@ -75,9 +80,19 @@ public class ExperimentActivity extends AppCompatActivity implements View.OnClic
         setupViews();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        glassInterface.stop();
+        xbandInterface.disconnect();
+    }
+
     private void setupBT() {
-        bluetoothInterface = new GlassClientBluetoothInterface(this);
-        bluetoothInterface.connectToGlass();
+        glassInterface = new GlassClientBluetoothInterface(this);
+        glassInterface.connectToGlass();
+
+        xbandInterface = new XbandInterface(this);
+        xbandInterface.connect();
     }
 
     private void setupViews() {
@@ -106,7 +121,7 @@ public class ExperimentActivity extends AppCompatActivity implements View.OnClic
                 }
                 break;
             case R.id.send_to_glass_button:
-                bluetoothInterface.sendTrial(experiment.getTrialList().get(viewPager.getCurrentItem()));
+                glassInterface.sendTrial(experiment.getTrialList().get(viewPager.getCurrentItem()));
                 break;
             case R.id.next_button:
                 if (viewPager.getCurrentItem() != adapter.getCount() - 1) {
@@ -114,5 +129,36 @@ public class ExperimentActivity extends AppCompatActivity implements View.OnClic
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onNewRFIDScan(final String rfidTag) {
+        ((ExperimentTrialFragment) adapter.getItem(viewPager.getCurrentItem())).onRFIDScanned(rfidTag);
+    }
+
+    @Override
+    public void onNewScanRSSI(short i) {
+    }
+
+    @Override
+    public void onNewBatteryStatus(double v) {
+    }
+
+    @Override
+    public void onTagWriteResponse(String s) {
+    }
+
+    @Override
+    public void onNewIMUEntry(XBandIMUData xBandIMUData) {
+    }
+
+    @Override
+    public void onTrialUpdated(final Trial trial) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                glassInterface.sendTrial(trial);
+            }
+        });
     }
 }

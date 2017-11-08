@@ -7,6 +7,14 @@
     <com.cs3605.orderpicking.util.TrialView
         android:id="@+id/create_trial_trialview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/reset_trial_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Reset trial" />
 
 </LinearLayout>

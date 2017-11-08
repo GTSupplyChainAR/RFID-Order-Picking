@@ -4,11 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import com.cs3605.orderpicking.bluetooth.GlassClientBluetoothInterface;
 import com.cs3605.orderpicking.createExperiment.CreateExperimentActivity;
+import com.cs3605.orderpicking.layoutIdEditor.BinIdEditorActivity;
 import com.cs3605.orderpicking.newExperiment.ExperimentActivity;
 import com.cs3605.orderpicking.newExperiment.NewExperimentClickListener;
 import com.cs3605.orderpicking.newExperiment.NewExperimentDialogFragment;
@@ -30,14 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.view_saved_experiments_button)
     Button viewSavedExperimentsButton;
 
-    // TODO: Remove
-    @BindView(R.id.send_to_glass_et)
-    EditText glassMessageET;
-
-    @BindView(R.id.send_to_glass_button)
-    Button sendToGlassButton;
-
-//    private GlassClientBluetoothInterface btInterface;
+    @BindView(R.id.edit_bin_tag_id_button)
+    Button editBinTagsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,27 +38,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         setupViews();
-
-//        setupBT();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-//        btInterface.stop();
     }
 
     private void setupViews() {
         newExpButton.setOnClickListener(this);
         createExperimentsButton.setOnClickListener(this);
         viewSavedExperimentsButton.setOnClickListener(this);
-        sendToGlassButton.setOnClickListener(this);
+        editBinTagsButton.setOnClickListener(this);
     }
-
-//    private void setupBT() {
-//        btInterface = new GlassClientBluetoothInterface(this);
-//        btInterface.connectToGlass();
-//    }
 
     @Override
     public void onClick(View v) {
@@ -80,10 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.view_saved_experiments_button:
                 startActivity(SavedExperimentsActivity.newIntent(this));
                 break;
-
-//            case R.id.send_to_glass_button:
-//                btInterface.sendString(glassMessageET.getText().toString().trim());
-//                break;
+            case R.id.edit_bin_tag_id_button:
+                startActivity(BinIdEditorActivity.newIntent(this));
+                break;
         }
     }
 

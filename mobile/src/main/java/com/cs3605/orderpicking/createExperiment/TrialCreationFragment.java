@@ -34,6 +34,7 @@ public class TrialCreationFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_trial_creation, container, false);
         ButterKnife.bind(this, view);
 
+        // TODO: Ability to edit rack name
         return view;
     }
 

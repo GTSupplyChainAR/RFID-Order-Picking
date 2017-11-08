@@ -22,6 +22,26 @@ public class Trial implements Serializable {
 
     public Trial() {}
 
+    public Trial copy() {
+        Trial trialCopy = new Trial();
+        trialCopy.setId(id);
+        trialCopy.setRackId(rackId);
+        trialCopy.setR1Quantity(r1Quantity);
+        trialCopy.setR2Quantity(r2Quantity);
+        trialCopy.setR3Quantity(r3Quantity);
+        trialCopy.setY1Quantity(y1Quantity);
+        trialCopy.setY2Quantity(y2Quantity);
+        trialCopy.setY3Quantity(y3Quantity);
+        trialCopy.setG1Quantity(g1Quantity);
+        trialCopy.setG2Quantity(g2Quantity);
+        trialCopy.setG3Quantity(g3Quantity);
+        trialCopy.setB1Quantity(b1Quantity);
+        trialCopy.setB2Quantity(b2Quantity);
+        trialCopy.setB3Quantity(b3Quantity);
+        trialCopy.setCartPos(cartPos);
+        return trialCopy;
+    }
+
     public long getId() {
         return id;
     }
