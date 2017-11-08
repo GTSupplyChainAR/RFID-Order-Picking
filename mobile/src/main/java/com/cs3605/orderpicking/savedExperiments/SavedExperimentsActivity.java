@@ -1,9 +1,11 @@
 package com.cs3605.orderpicking.savedExperiments;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -60,8 +62,28 @@ public class SavedExperimentsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    private void deleteExperimentPrompt() {
-        // TODO: Dialog
+    private void deleteExperimentPrompt(int experimentPosition) {
+        final Experiment experiment = experimentList.get(experimentPosition);
+
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("Delete " + experiment.getExperimentName() + "?");
+        dialog.setMessage("Are you sure you want to delete experiment " + experiment.getExperimentName() + "? This will remove it permanently!");
+        dialog.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dbHelper.deleteExperiment(experiment.getId());
+                experimentList = dbHelper.getAllExperiments();
+                adapter.notifyDataSetChanged();
+                dialog.dismiss();
+            }
+        });
+        dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
     }
 
     private class ExperimentRecyclerViewAdapter extends RecyclerView.Adapter<ExperimentViewHolder> {
@@ -92,7 +114,7 @@ public class SavedExperimentsActivity extends AppCompatActivity {
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    deleteExperimentPrompt();
+                    deleteExperimentPrompt(getAdapterPosition());
                     return true;
                 }
             });

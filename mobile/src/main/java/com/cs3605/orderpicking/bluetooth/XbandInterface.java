@@ -20,6 +20,8 @@ public class XbandInterface {
             xBandConnection.setActivateIMUService(true);
             xBandConnection.setLastConfigMessage(xBandConnection.createConfigurationProperty());
             xBandConnection.registerEventListener((XBandEventListener) context);
+            xBandConnection.setInitialReaderPower((byte)1);
+            xBandConnection.setTagTimeoutInSeconds("1");
         }
     }
 
