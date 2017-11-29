@@ -8,70 +8,80 @@
         android:id="@+id/rack_id_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world"
+        android:text="NOT CONNECTED"
         android:textSize="40px" />
 
-    <LinearLayout
-        android:id="@+id/cart_rack_holder"
-        android:layout_width="310px"
-        android:layout_height="70px"
+    <TextView
+        android:id="@+id/cart_position_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40px"
+        android:layout_centerVertical="true"
+        android:gravity="center"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="25px">
+        android:maxWidth="310px"/>
 
-        <LinearLayout
-            android:id="@+id/cart_bin_1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginRight="5px"
-            android:layout_weight="1"
-            android:background="@drawable/background_gray_empty">
+    <!--<LinearLayout-->
+        <!--android:id="@+id/cart_rack_holder"-->
+        <!--android:layout_width="310px"-->
+        <!--android:layout_height="70px"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_marginTop="25px">-->
 
-            <TextView
-                android:id="@+id/cart_bin_1_textview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="1"
-                android:textSize="40px" />
-        </LinearLayout>
+        <!--<LinearLayout-->
+            <!--android:id="@+id/cart_bin_1"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginRight="5px"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/background_gray_empty">-->
 
-        <LinearLayout
-            android:id="@+id/cart_bin_2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginRight="5px"
-            android:layout_weight="1"
-            android:background="@drawable/background_gray_empty">
+            <!--<TextView-->
+                <!--android:id="@+id/cart_bin_1_textview"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:gravity="center"-->
+                <!--android:text="1"-->
+                <!--android:textSize="40px" />-->
+        <!--</LinearLayout>-->
 
-            <TextView
-                android:id="@+id/cart_bin_2_textview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="2"
-                android:textSize="40px" />
-        </LinearLayout>
+        <!--<LinearLayout-->
+            <!--android:id="@+id/cart_bin_2"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginRight="5px"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/background_gray_empty">-->
 
-        <LinearLayout
-            android:id="@+id/cart_bin_3"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginRight="5px"
-            android:layout_weight="1"
-            android:background="@drawable/background_gray_empty">
+            <!--<TextView-->
+                <!--android:id="@+id/cart_bin_2_textview"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:gravity="center"-->
+                <!--android:text="2"-->
+                <!--android:textSize="40px" />-->
+        <!--</LinearLayout>-->
 
-            <TextView
-                android:id="@+id/cart_bin_3_textview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="3"
-                android:textSize="40px" />
-        </LinearLayout>
-    </LinearLayout>
+        <!--<LinearLayout-->
+            <!--android:id="@+id/cart_bin_3"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginRight="5px"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/background_gray_empty">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/cart_bin_3_textview"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:gravity="center"-->
+                <!--android:text="3"-->
+                <!--android:textSize="40px" />-->
+        <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
 
     <LinearLayout
         android:id="@+id/rack_one_holder"
@@ -94,7 +104,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="1"
                 android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
@@ -113,7 +122,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="1"
                 android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
@@ -132,7 +140,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="1"
                 android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
@@ -159,7 +166,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="1"
                 android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
@@ -178,7 +184,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="1"
                 android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
@@ -197,7 +202,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="1"
                 android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
@@ -224,7 +228,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="1"
                 android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
@@ -243,7 +246,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="1"
                 android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
@@ -262,7 +264,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="1"
                 android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
@@ -289,7 +290,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="1"
                 android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
@@ -308,7 +308,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="1"
                 android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>
@@ -327,7 +326,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="1"
                 android:textColor="@color/white"
                 android:textSize="40px" />
         </LinearLayout>

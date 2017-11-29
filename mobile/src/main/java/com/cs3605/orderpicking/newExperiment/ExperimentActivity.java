@@ -83,16 +83,20 @@ public class ExperimentActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        glassInterface.stop();
-        xbandInterface.disconnect();
+//        glassInterface.stop();
+//        xbandInterface.disconnect();
     }
 
     private void setupBT() {
-        glassInterface = new GlassClientBluetoothInterface(this);
-        glassInterface.connectToGlass();
+//        glassInterface = new GlassClientBluetoothInterface(this);
+//        glassInterface.connectToGlass();
+//
+//        xbandInterface = new XbandInterface(this);
+//        xbandInterface.connect();
 
-        xbandInterface = new XbandInterface(this);
-        xbandInterface.connect();
+        glassInterface = GlassClientBluetoothInterface.getInstance();
+        xbandInterface = XbandInterface.getInstance(this);
+
     }
 
     private void setupViews() {
@@ -133,7 +137,14 @@ public class ExperimentActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onNewRFIDScan(final String rfidTag) {
-        ((ExperimentTrialFragment) adapter.getItem(viewPager.getCurrentItem())).onRFIDScanned(rfidTag);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+
+                ((ExperimentTrialFragment) adapter.getItem(viewPager.getCurrentItem())).onRFIDScanned(rfidTag);
+                Toast.makeText(ExperimentActivity.this, "Scanned: " + rfidTag, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

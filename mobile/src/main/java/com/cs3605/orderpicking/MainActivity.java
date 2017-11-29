@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.cs3605.orderpicking.bluetooth.GlassClientBluetoothInterface;
+import com.cs3605.orderpicking.bluetooth.XbandInterface;
 import com.cs3605.orderpicking.createExperiment.CreateExperimentActivity;
 import com.cs3605.orderpicking.layoutIdEditor.BinIdEditorActivity;
 import com.cs3605.orderpicking.newExperiment.ExperimentActivity;
@@ -31,13 +33,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.edit_bin_tag_id_button)
     Button editBinTagsButton;
 
+    private GlassClientBluetoothInterface glassInterface;
+    private XbandInterface xbandInterface;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        setupBT();
         setupViews();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        glassInterface.stop();
+        xbandInterface.disconnect();
+    }
+
+    private void setupBT() {
+        if (glassInterface == null) {
+            glassInterface = GlassClientBluetoothInterface.getInstance();
+            glassInterface.connectToGlass();
+        }
+
+        if (xbandInterface == null) {
+            xbandInterface = XbandInterface.getInstance(this);
+            xbandInterface.connect();
+        }
     }
 
     private void setupViews() {

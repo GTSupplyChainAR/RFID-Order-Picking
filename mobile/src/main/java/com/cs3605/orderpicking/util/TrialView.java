@@ -1,6 +1,8 @@
 package com.cs3605.orderpicking.util;
 
+import android.app.Activity;
 import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,12 +11,16 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.cs3605.orderpicking.R;
+import com.cs3605.orderpicking.createExperiment.RackNameChangeListener;
+import com.cs3605.orderpicking.createExperiment.RackNameDialogFragment;
 import com.cs3605.orderpicking.data.Trial;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class TrialView extends RelativeLayout implements View.OnClickListener, View.OnLongClickListener {
+public class TrialView extends RelativeLayout implements View.OnClickListener, View.OnLongClickListener, RackNameChangeListener {
+
+    private static final String DIALOG_RACK_NAME = "dialog_rack_name";
 
     @BindView(R.id.rack_id_textview)
     TextView rackIdTextView;
@@ -99,6 +105,8 @@ public class TrialView extends RelativeLayout implements View.OnClickListener, V
     }
 
     private void setupClickListeners() {
+        rackIdTextView.setOnClickListener(this);
+
         bin11Layout.setOnClickListener(this);
         bin11Layout.setOnLongClickListener(this);
         bin12Layout.setOnClickListener(this);
@@ -238,7 +246,7 @@ public class TrialView extends RelativeLayout implements View.OnClickListener, V
         if (isEnabled()) {
             switch (v.getId()) {
                 case R.id.rack_id_textview:
-                    // TODO: Launch dialog to change name
+                    RackNameDialogFragment.newInstance(this).show(((AppCompatActivity)getContext()).getSupportFragmentManager(), DIALOG_RACK_NAME);
                     break;
                 case R.id.bin_11:
                     trial.setR1Quantity(trial.getR1Quantity() + 1);
@@ -334,5 +342,11 @@ public class TrialView extends RelativeLayout implements View.OnClickListener, V
         }
         setupViews();
         return true;
+    }
+
+    @Override
+    public void onRackNameChange(String rackName) {
+        trial.setRackId(rackName);
+        setupViews();
     }
 }

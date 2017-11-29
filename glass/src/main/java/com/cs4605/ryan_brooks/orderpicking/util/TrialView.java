@@ -9,9 +9,12 @@ import android.widget.TextView;
 
 import com.cs4605.ryan_brooks.orderpicking.R;
 
+import java.util.Arrays;
+
 public class TrialView extends RelativeLayout {
 
     TextView rackIdTextView;
+    TextView cartPositionTextView;
     LinearLayout bin11Layout;
     TextView bin11TextView;
     LinearLayout bin12Layout;
@@ -36,9 +39,6 @@ public class TrialView extends RelativeLayout {
     TextView bin42TextView;
     LinearLayout bin43Layout;
     TextView bin43TextView;
-    LinearLayout cartBin1Layout;
-    LinearLayout cartBin2Layout;
-    LinearLayout cartBin3Layout;
 
     public TrialView(Context context) {
         super(context);
@@ -63,6 +63,7 @@ public class TrialView extends RelativeLayout {
 
     private void bindViews() {
         rackIdTextView = (TextView) findViewById(R.id.rack_id_textview);
+        cartPositionTextView = (TextView) findViewById(R.id.cart_position_textview);
 
         bin11Layout = (LinearLayout) findViewById(R.id.bin_11);
         bin11TextView = (TextView) findViewById(R.id.bin_11_textview);
@@ -89,14 +90,11 @@ public class TrialView extends RelativeLayout {
         bin43Layout = (LinearLayout) findViewById(R.id.bin_43);
         bin43TextView = (TextView) findViewById(R.id.bin_43_textview);
 
-        cartBin1Layout = (LinearLayout) findViewById(R.id.cart_bin_1);
-        cartBin2Layout = (LinearLayout) findViewById(R.id.cart_bin_2);
-        cartBin3Layout = (LinearLayout) findViewById(R.id.cart_bin_3);
-
     }
 
     public void setupViews(byte[] bytes) {
-        rackIdTextView.setText("TODO");
+        byte[] rackNameBytes = Arrays.copyOfRange(bytes, 13, 18);
+        rackIdTextView.setText(new String(rackNameBytes));
 
         setRedBackground(bin11Layout, bytes[0]);
         bin11TextView.setText(Byte.toString(bytes[0]));
@@ -126,10 +124,7 @@ public class TrialView extends RelativeLayout {
         setBlueBackground(bin43Layout, bytes[11]);
         bin43TextView.setText(Byte.toString(bytes[11]));
 
-        // TODO: Visibility of cart text
-        setGrayBackground(cartBin1Layout, bytes[12] == 0);
-        setGrayBackground(cartBin2Layout, bytes[12] == 1);
-        setGrayBackground(cartBin3Layout, bytes[12] == 2);
+        cartPositionTextView.setText("Place items in bin #" + Byte.toString((byte) (bytes[12] + 1)));
     }
 
     private void setRedBackground(LinearLayout layout, byte quantity) {

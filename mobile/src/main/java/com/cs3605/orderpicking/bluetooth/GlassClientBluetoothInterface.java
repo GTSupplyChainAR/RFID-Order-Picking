@@ -31,11 +31,19 @@ public class GlassClientBluetoothInterface {
     private BluetoothAdapter bluetoothAdapter;
     private BluetoothDevice glassDevice;
 //    private Handler bluetoothHandler;
+    private static GlassClientBluetoothInterface glassInterface;
 
     private ConnectThread connectThread;
     private ConnectedThread connectedThread;
 
-    public GlassClientBluetoothInterface(Context context) {
+    public static GlassClientBluetoothInterface getInstance() {
+        if (glassInterface == null) {
+            glassInterface = new GlassClientBluetoothInterface();
+        }
+        return glassInterface;
+    }
+
+    public GlassClientBluetoothInterface() {
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 //        bluetoothHandler = handler;
 
@@ -107,6 +115,11 @@ public class GlassClientBluetoothInterface {
         bytes[10] = b2Quantity;
         bytes[11] = b3Quantity;
         bytes[12] = cartPos;
+        bytes[13] = (byte) trial.getRackId().charAt(0);
+        bytes[14] = (byte) trial.getRackId().charAt(1);
+        bytes[15] = (byte) trial.getRackId().charAt(2);
+        bytes[16] = (byte) trial.getRackId().charAt(3);
+        bytes[17] = (byte) trial.getRackId().charAt(4);
 
         connectedThread.write(bytes);
     }
