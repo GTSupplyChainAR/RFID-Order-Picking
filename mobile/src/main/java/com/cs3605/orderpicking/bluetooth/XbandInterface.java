@@ -33,8 +33,8 @@ public class XbandInterface implements XBandEventListener {
             xBandConnection.setActivateIMUService(true);
             xBandConnection.setLastConfigMessage(xBandConnection.createConfigurationProperty());
             xBandConnection.registerEventListener(this);
-            xBandConnection.setInitialReaderPower((byte) 2);
-            xBandConnection.setTagTimeoutInSeconds("2");
+            xBandConnection.setInitialReaderPower((byte) 3);
+            xBandConnection.setTagTimeoutInSeconds("3");
         }
     }
 
