@@ -11,7 +11,7 @@ import de.ubimax.xbandtest.xband.XBandIMUData;
 public class XbandInterface implements XBandEventListener {
 
     private static final String XBAND_1_ADDRESS = "B#E076D0916795";
-    private static final String XBAND_2_ADDRESS = "B#E076D091627D";
+    private static final String XBAND_2_ADDRESS = "B#E076D09162D7";
 
     private Context context;
     private XBandConnectionHandler xBandConnection = null;
