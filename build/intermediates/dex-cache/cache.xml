@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/charu/.android/build-cache/4701a958f4209fae10dd11bd55ce999aa94d2473/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="359e8d7244278319aed8bf053f8e8111a1380f06">
+        <dex dex="/Users/charu/Desktop/cs4605-Order-Picking-Google-Glass-master/mobile/build/intermediates/pre-dexed/debug/classes_7a810d3b2f318a3a8b5bb48177a6810d4f595713.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/charu/.android/build-cache/4701a958f4209fae10dd11bd55ce999aa94d2473/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="359e8d7244278319aed8bf053f8e8111a1380f06">
+        <dex dex="/Users/charu/Desktop/cs4605-Order-Picking-Google-Glass-master/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7a810d3b2f318a3a8b5bb48177a6810d4f595713/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/charu/Desktop/cs4605-Order-Picking-Google-Glass-master/mobile/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/charu/Desktop/cs4605-Order-Picking-Google-Glass-master/mobile/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_7fbf83125e4b82b3f5c597168da82d6b147dccab/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/charu/Desktop/cs4605-Order-Picking-Google-Glass-master/mobile/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="7b2b4ee17f9642874700db9ca051950567167a0c">
+        <dex dex="/Users/charu/Desktop/cs4605-Order-Picking-Google-Glass-master/mobile/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_b94d982070719ed41ec100cf5c7b25f081d3dab6/classes.dex" />
+    </item>
+
+</items>
